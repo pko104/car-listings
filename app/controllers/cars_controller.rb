@@ -15,7 +15,6 @@ class CarsController < ApplicationController
 
   def new
     @manufacturer = Manufacturer.find(params[:manufacturer_id])
-    @car = Car.new
   end
 
   private

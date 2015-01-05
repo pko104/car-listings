@@ -6,7 +6,7 @@ class ManufacturersController < ApplicationController
     if @manufacturer.save
       redirect_to '/', notice: "Your manufacturer was submitted."
     else
-      flash.now[:notice]= @manufacturer.errors.full_messages
+      flash.now[:notice] = @manufacturer.errors.full_messages
       render :new
     end
   end
@@ -21,7 +21,7 @@ class ManufacturersController < ApplicationController
 
   def show
     @manufacturer = Manufacturer.find(params[:id])
-    @cars = Car.where(params[:manufacturer_id])
+    @cars = Car.where(manufacturer_id: params[:id])
   end
 
   private
