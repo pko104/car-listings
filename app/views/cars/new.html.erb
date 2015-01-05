@@ -1,0 +1,45 @@
+<h1><%= "Submission" %></h1>
+
+<% if flash.any? %>
+  <div class="flash">
+    <div class="container">
+      <li>
+        <% flash[:notice].each do |f|%>
+          <%= f %>
+        <%end%>
+      </li>
+    </div>
+  </div>
+<% end %>
+
+<br>
+  <%= form_for [@manufacturer, @car] do |f| %>
+    <div>
+      <%= f. label :color%>
+    </div>
+    <div>
+        <%= f. text_field :color%>
+    </div>
+    <div>
+      <%= f. label :year %>
+    </div>
+    <div>
+        <%= f. text_field :year%>
+    </div>
+    <div>
+      <%= f. label :mileage %>
+    </div>
+    <div>
+        <%= f. text_field :mileage%>
+    </div>
+    <div>
+      <%= f. label :description%>
+    </div>
+    <div>
+        <%= f. text_area :description, size: "40x10" %>
+    </div>
+    <div>
+      <%= f.submit  "Submit"%>
+    <div>
+  <%end%>
+<%=link_to "Go Back", manufacturer_path(params[:manufacturer_id])%>

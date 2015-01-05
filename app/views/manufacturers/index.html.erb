@@ -1,0 +1,31 @@
+<h1>Them manufacturers</h1>
+
+<% if flash.any? %>
+  <div class="flash">
+    <div class="container">
+      <li>
+        <%= flash[:notice]%>
+      </li>
+        <br>
+    </div>
+  </div>
+<%end%>
+
+<div>
+
+    <%= link_to "Submit a Manufacturer", new_manufacturer_path%>
+  <br>
+  </br>
+</div>
+<%if @manufacturers%>
+  <% @manufacturers.each do |q| %>
+    <div class = "field">
+      <%= "Manufacturer: " %>
+        <%= link_to q.name, manufacturer_path(q) %>
+    </div>
+    <div>
+      <%= "Country: " %>
+      <li><%= q.country_name %></li>
+    </div>
+  <%end%>
+<%end%>

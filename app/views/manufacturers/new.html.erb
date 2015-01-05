@@ -1,0 +1,33 @@
+<h1><%= "Submission" %></h1>
+
+<% if flash.any? %>
+  <div class="flash">
+    <div class="container">
+      <li>
+        <% flash[:notice].each do |f|%>
+          <%= f %>
+        <%end%>
+      </li>
+    </div>
+  </div>
+<% end %>
+
+<br>
+  <%= form_for @manufacturer do |f| %>
+    <div>
+      <%= f. label :name%>
+     </div>
+    <div>
+        <%= f. text_field :name%>
+    </div>
+    <div>
+      <%= f. label :country_name %>
+    </div>
+    <div>
+        <%= f. text_field :country_name%>
+    </div>
+    <div>
+      <%= f.submit  "Submit"%>
+    <div>
+  <%end%>
+</br>
